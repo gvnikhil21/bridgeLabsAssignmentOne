@@ -19,6 +19,7 @@ public class Employee {
 		System.out.println("Welcome to Employee Wage Computation Program!");
 
 		//Modifying if-else to Switch-Case
+		double empCheck = Math.floor(Math.random() * 10) % 3;
 		switch((int)empCheck) {
 			case IS_PRESENT:
 				System.out.println("Employee is Full-Time and Present!");
