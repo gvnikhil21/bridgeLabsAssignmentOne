@@ -14,39 +14,42 @@ public class Employee {
 		//Variables
 		int noOfHour=0;
 		int totalWage=0;
-		int noOfDays=1;
+		int noOfDays=0;
 		//Welcome statement
 		System.out.println("Welcome to Employee Wage Computation Program!");
 
+		System.out.println("EmpType\t\tHours\tDays\tWage");
 		//Applying condition for calculating wage of employee till 100Hours/20Days 
 		double empCheck = Math.floor(Math.random() * 10) % 3;
 		switch((int)empCheck) {
 			case IS_PRESENT:
-				System.out.println("Employee is Full-Time and Present!");
-				while(noOfHour <= TOTAL_WORKING_HOURS && noOfDays<=WORKING_DAYS_PER_MONTH){
+				while(noOfHour <= TOTAL_WORKING_HOURS && noOfDays<WORKING_DAYS_PER_MONTH){
 				noOfHour += FULL_DAY_HOUR;
 				noOfDays++;
 			}
 				if(noOfHour > TOTAL_WORKING_HOURS)
-				noOfHour=TOTAL_WORKING_HOURs;
+				noOfHour=TOTAL_WORKING_HOURS;
+				//Calculate Total Employee Wage
+				totalWage = noOfHour * WAGE_PER_HOUR;
+				System.out.println("FullTime\t"+noOfHour+"\t"+noOfDays+"\t"+totalWage);
 				break;
 			case IS_PART_TIME:
-				System.out.println("Employee is Part-Time and Present!");
-				while(noOfHour <= TOTAL_WORKING_HOURS && noOfDays<=WORKING_DAYS_PER_MONTH){
+				while(noOfHour <= TOTAL_WORKING_HOURS && noOfDays<WORKING_DAYS_PER_MONTH){
 				noOfHour += PART_TIME_HOUR;
 				noOfDays++;
 			}
 				if(noOfHour > TOTAL_WORKING_HOURS)
 				noOfHour=TOTAL_WORKING_HOURS;
+				//Calculate Total Employee Wage
+				totalWage = noOfHour * WAGE_PER_HOUR;
+				System.out.println("PartTime\t"+noOfHour+"\t"+noOfDays+"\t"+totalWage);
 				break;
 			default:
-				System.out.println("Employee is Absent!");
+				//Calculate Total Employee Wage
+				totalWage = noOfHour * WAGE_PER_HOUR;
+				System.out.println("Absent\t\t"+noOfHour+"\t"+noOfDays+"\t"+totalWage);
 				break;
 		}
-
-		//Calculate Total Employee Wage
-		totalWage = noOfHour * WAGE_PER_HOUR;
-		System.out.println("Total Employee Wage is : "+ totalWage);
 	}
 }
 
