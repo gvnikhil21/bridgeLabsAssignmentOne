@@ -7,11 +7,13 @@ public class Employee {
 	public static final int WAGE_PER_HOUR=20;
 	public static final int FULL_DAY_HOUR=8;
 	public static final int PART_TIME_HOUR=4;
+	public static final int WORKING_DAYS_PER_MONTH=20;
 
 	public static void main(String[] args) {
 		//Variables
 		int noOfHour=0;
-		int dailyWage=0;		
+		int dailyWage=0;
+		int monthlyWage=0;
 		
 		//Welcome statement
 		System.out.println("Welcome to Employee Wage Computation Program!");
@@ -34,6 +36,10 @@ public class Employee {
 		//Calculate Daily Employee Wage
 		dailyWage = noOfHour * WAGE_PER_HOUR;
 		System.out.println("Daily Employee Wage is : "+ dailyWage);
+
+		//Calculate Monthly Employee Wage
+		monthlyWage = dailyWage * WORKING_DAYS_PER_MONTH;
+		System.out.println("Monthly Employee Wage is : "+ monthlyWage);
 	}
 }
 
