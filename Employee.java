@@ -16,18 +16,21 @@ public class Employee {
 		//Welcome statement
 		System.out.println("Welcome to Employee Wage Computation Program!");
 
-		//Check Employee Present or Absent 
-		//Check Employee Full-Time or Part-Time
-		double empCheck = Math.floor(Math.random() * 10) % 3;
-		if(empCheck==IS_PRESENT) 
-			System.out.println("Employee is Full-Time and Present!");
-		else if(empCheck == IS_PART_TIME) {
-			System.out.println("Employee is Part-Time and Present!");
-			noOfHour = PART_TIME_HOUR;
+		//Modifying if-else to Switch-Case
+		switch((int)empCheck) {
+			case IS_PRESENT:
+				System.out.println("Employee is Full-Time and Present!");
+				noOfHour = FULL_DAY_HOUR;
+				break;
+			case IS_PART_TIME:
+				System.out.println("Employee is Part-Time and Present!");
+				noOfHour = PART_TIME_HOUR;
+				break;
+			default:
+				System.out.println("Employee is Absent!");
+				break;
 		}
-		else 
-			System.out.println("Employee is Absent!");
-		
+
 		//Calculate Daily Employee Wage
 		dailyWage = noOfHour * WAGE_PER_HOUR;
 		System.out.println("Daily Employee Wage is : "+ dailyWage);
