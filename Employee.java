@@ -1,4 +1,4 @@
-package employee;
+package com.bridgeLabs.employeeWageProblem;
 
 public class Employee {
 
@@ -11,26 +11,20 @@ public class Employee {
 		System.out.println(
 				"-------------------------------------------------------------------------------------------------------");
 
-		// creating object of Company class
-		// companyOne
-		Company companyOne = new Company("companyOne", 20, 20, 100);
-		companyOne.calculateEmpWage();
-		printDetails(companyOne);
-		// companyTwo
-		Company companyTwo = new Company("companyTwo", 40, 25, 120);
-		companyTwo.calculateEmpWage();
-		printDetails(companyTwo);
+		// creating object of EmpWageBuilder class
+		EmpWageBuilder empWageBuilder = new EmpWageBuilder();
 
-		// companyThree
-		Company companyThree = new Company("companyThree", 50, 30, 140);
-		companyThree.calculateEmpWage();
-		printDetails(companyThree);
+		// adding companies
+		empWageBuilder.addCompany("companyOne", 20, 20, 100);
+		empWageBuilder.addCompany("companyTwo", 40, 25, 120);
+		empWageBuilder.addCompany("companyThree", 50, 30, 140);
 
-	}
-
-	public static void printDetails(Company company) {
-		System.out.println(company.getCompanyName() + "\t" + company.getWagePerHour() + "\t\t"
-				+ company.getWorkingDaysPerMonth() + "\t\t" + company.getWorkingHoursPerMonth() + "\t\t"
-				+ company.getNoOfHours() + "\t\t" + company.getNoOfDays() + "\t\t" + company.getTotalWage());
+		// calculating empWage for multiple companies
+		Company companyArray[] = empWageBuilder.getCompanyArray();
+		for (Company company : companyArray) {
+			empWageBuilder.calculateEmpWage(company);
+			System.out.print(company);
+			System.out.println(empWageBuilder);
+		}
 	}
 }
