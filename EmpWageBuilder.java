@@ -21,6 +21,14 @@ public class EmpWageBuilder implements IEmpWageBuilder {
 		return companyList;
 	}
 
+	// get total wage of an employee in a company by company name
+	public Integer getCompanyEmpWageMap(String companyName) {
+		if (companyEmpWageMap.containsKey(companyName))
+			return companyEmpWageMap.get(companyName);
+
+		return null;
+	}
+
 	// add company to companyList
 	public void addCompany(String companyName, int wagePerHour, int workingDaysPerMonth, int workingHoursPerMonth) {
 		companyList.add(new Company(companyName, wagePerHour, workingDaysPerMonth, workingHoursPerMonth));

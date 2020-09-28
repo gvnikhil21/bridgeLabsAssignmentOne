@@ -9,4 +9,6 @@ public interface IEmpWageBuilder {
 	public ArrayList<Company> getCompanyList();
 
 	public int calculateEmpWage(Company company);
+
+	public Integer getCompanyEmpWageMap(String companyName);
 }

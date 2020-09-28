@@ -29,6 +29,18 @@ public class Employee {
 
 		// calculating empWage for multiple companies
 		employee.calculateAndPrintEmpWage(empWageBuilder);
+		System.out.println(
+				"-------------------------------------------------------------------------------------------------------");
+
+		// getting total wage of an employee in any company by company name
+		System.out.println("Enter the company name whose monthly employee wage you want to know: ");
+		String companyName = sc.nextLine();
+		Integer totalEmpWage = empWageBuilder.getCompanyEmpWageMap(companyName);
+		if (totalEmpWage != null)
+			System.out.println("Monthly employee wage in " + companyName + " is " + totalEmpWage);
+		else
+			System.out.println("Sorry! No company with such name found!");
+
 	}
 
 	public void calculateAndPrintEmpWage(IEmpWageBuilder empWageBuilder) {
