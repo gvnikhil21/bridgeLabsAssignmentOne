@@ -1,5 +1,7 @@
 package com.bridgeLabs.employeeWageProblem;
 
+import java.util.*;
+
 public class Employee {
 
 	public static void main(String[] args) {
@@ -11,6 +13,8 @@ public class Employee {
 		System.out.println(
 				"-------------------------------------------------------------------------------------------------------");
 
+		// creating Employee object
+		Employee employee = new Employee();
 		// creating EmpWageBuilder object with reference to IEmpWageBuilder interface
 		IEmpWageBuilder empWageBuilder = new EmpWageBuilder();
 
@@ -20,8 +24,12 @@ public class Employee {
 		empWageBuilder.addCompany("companyThree", 50, 30, 140);
 
 		// calculating empWage for multiple companies
-		Company companyArray[] = empWageBuilder.getCompanyArray();
-		for (Company company : companyArray) {
+		employee.calculateAndPrintEmpWage(empWageBuilder);
+	}
+
+	public void calculateAndPrintEmpWage(IEmpWageBuilder empWageBuilder) {
+		ArrayList<Company> companyList = empWageBuilder.getCompanyList();
+		for (Company company : companyList) {
 			empWageBuilder.calculateEmpWage(company);
 			System.out.print(company);
 			System.out.println(empWageBuilder);

@@ -1,5 +1,7 @@
 package com.bridgeLabs.employeeWageProblem;
 
+import java.util.*;
+
 public class EmpWageBuilder implements IEmpWageBuilder {
 	// Constants
 	private static final int IS_PRESENT = 1;
@@ -12,17 +14,15 @@ public class EmpWageBuilder implements IEmpWageBuilder {
 	private int noOfHours = 0;
 	private int noOfDays = 0;
 	private int empHour = 0;
-	private int countOfCompany = 0;
-	Company companyArray[] = new Company[3];
+	ArrayList<Company> companyList = new ArrayList<Company>();
 
-	public Company[] getCompanyArray() {
-		return companyArray;
+	public ArrayList<Company> getCompanyList() {
+		return companyList;
 	}
 
 	// add company to companyList
 	public void addCompany(String companyName, int wagePerHour, int workingDaysPerMonth, int workingHoursPerMonth) {
-		companyArray[countOfCompany] = new Company(companyName, wagePerHour, workingDaysPerMonth, workingHoursPerMonth);
-		countOfCompany++;
+		companyList.add(new Company(companyName, wagePerHour, workingDaysPerMonth, workingHoursPerMonth));
 	}
 
 	// calculates employee wage till 100Hours/20Days whichever earlier is reached
