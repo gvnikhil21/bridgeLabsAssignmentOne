@@ -1,6 +1,6 @@
 package com.bridgeLabs.employeeWageProblem;
 
-public class EmpWageBuilder {
+public class EmpWageBuilder implements IEmpWageBuilder {
 	// Constants
 	private static final int IS_PRESENT = 1;
 	private static final int IS_PART_TIME = 2;

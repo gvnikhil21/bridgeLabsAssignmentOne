@@ -11,8 +11,8 @@ public class Employee {
 		System.out.println(
 				"-------------------------------------------------------------------------------------------------------");
 
-		// creating object of EmpWageBuilder class
-		EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+		// creating EmpWageBuilder object with reference to IEmpWageBuilder interface
+		IEmpWageBuilder empWageBuilder = new EmpWageBuilder();
 
 		// adding companies
 		empWageBuilder.addCompany("companyOne", 20, 20, 100);
