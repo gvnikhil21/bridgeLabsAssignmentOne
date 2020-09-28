@@ -5,6 +5,10 @@ import java.util.*;
 public class Employee {
 
 	public static void main(String[] args) {
+
+		// Scanner class
+		Scanner sc = new Scanner(System.in);
+
 		// Welcome statement
 		System.out.println("Welcome to Employee Wage Computation Program!");
 		System.out.println(

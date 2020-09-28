@@ -15,6 +15,7 @@ public class EmpWageBuilder implements IEmpWageBuilder {
 	private int noOfDays = 0;
 	private int empHour = 0;
 	ArrayList<Company> companyList = new ArrayList<Company>();
+	HashMap<String, Integer> companyEmpWageMap = new HashMap<String, Integer>();
 
 	public ArrayList<Company> getCompanyList() {
 		return companyList;
@@ -46,6 +47,7 @@ public class EmpWageBuilder implements IEmpWageBuilder {
 				noOfHours = company.getWorkingHoursPerMonth();
 		}
 		totalWage = noOfHours * company.getWagePerHour();
+		companyEmpWageMap.put(company.getCompanyName(), totalWage);
 		return totalWage;
 	}
 
